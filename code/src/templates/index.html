@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+  </head>
+  <body>
+    <h1>City: {{forecast.address}}</h1>
+    <h2>Timezone: {{forecast.timezone}}</h2>
+
+    <div class="hours">
+      <ul>
+        {%for hour in forecast.hours%}
+        <li>
+          time: {{ hour.datetime }} Temperature: {{ hour.temp }}°C Humidity: {{
+          hour.humidity }}% Windspeed: {{ hour.windspeed }} km/h {{
+          hour.conditions }}
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% for day in forecast.days %}
+    <div>
+      {{ day.datetime }}: Max {{ day.tempmax }}°C, Min {{ day.tempmin }}°C
+    </div>
+    {% endfor %}
+  </body>
+</html>

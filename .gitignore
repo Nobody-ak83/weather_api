@@ -1,0 +1,16 @@
+.env
+.env.*
+
+
+venv/
+.uv/
+.venv
+
+__pycache__/
+
+.pytest_cache/
+
+helper.txt
+
+data.json
+for_tests.json
